@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mail Link</title>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: "Segoe UI", system-ui, sans-serif; font-size: 14px; margin: 0; padding: 14px; }
+    h1 { font-size: 15px; margin: 0 0 4px; }
+    .subject { color: #666; margin: 0 0 12px; word-break: break-word; }
+    textarea { width: 100%; box-sizing: border-box; height: 84px; font: 12px/1.4 Consolas, monospace; padding: 6px; resize: vertical; }
+    .row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    button { font: inherit; padding: 6px 10px; border: 1px solid #8a8886; border-radius: 4px; background: transparent; color: inherit; cursor: pointer; }
+    button.primary { background: #0f6cbd; border-color: #0f6cbd; color: #fff; }
+    button:hover { filter: brightness(1.1); }
+    #status { margin-top: 10px; min-height: 18px; color: #107c10; }
+    #status.err { color: #c50f1f; }
+    .note { margin-top: 14px; font-size: 12px; color: #888; }
+  </style>
+</head>
+<body>
+  <h1>Epostlenke</h1>
+  <p class="subject" id="subject">Laster …</p>
+  <textarea id="link" readonly placeholder="Ingen epost valgt"></textarea>
+  <div class="row">
+    <button class="primary" id="copy">Kopier lenke</button>
+    <button id="copyMd">Markdown</button>
+    <button id="copyHtml">Lenke med tittel</button>
+    <button id="open">Åpne</button>
+  </div>
+  <div id="status" role="status"></div>
+  <p class="note">Lenken åpner eposten i Outlook på nett og virker for alle med tilgang til postboksen.</p>
+  <script src="taskpane.js"></script>
+</body>
+</html>
